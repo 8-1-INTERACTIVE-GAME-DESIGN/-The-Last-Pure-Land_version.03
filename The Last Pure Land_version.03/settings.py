@@ -46,5 +46,6 @@ HP_IMAGE = pygame.transform.scale(pygame.image.load("images/hp.png"), (40, 40))
 COIN = [pygame.transform.scale(pygame.image.load("images/dollar_1.png"), (40, 40)),
         pygame.transform.scale(pygame.image.load("images/dollar_0.png"), (40, 40))]
 WAVE = pygame.transform.scale(pygame.image.load("images/battle.png"), (40, 40))
-PCR = [pygame.transform.scale(pygame.image.load("images/pcr.png"), (40, 40)),
-       pygame.transform.scale(pygame.image.load("images/pcr02.png"), (80, 80))]
+SPRAY = [pygame.transform.scale(pygame.image.load("images/spray.png"), (80, 80)),
+         pygame.transform.scale(pygame.image.load("images/spray01.png"), (80, 80)),
+         pygame.transform.scale(pygame.image.load("images/spray02.png"), (80, 80))]
