@@ -58,38 +58,6 @@ class Fire_1(Fire):
         self.path_index = 0
         self.move_count = 0
 
-class Fire_2(Fire):
-    def __init__(self):
-        self.path = fire_PATH_2
-        self.path_index = 0
-        self.move_count = 0
-        global wave
-        if wave == 2:
-            self.stride = 10.2
-        else:
-            self.stride = 10.0
-        self.image = pygame.transform.scale(FIRE_IMAGE, (200, 200))
-        self.rect = self.image.get_rect()
-        self.rect.center = self.path[self.path_index]
-        self.path_index = 0
-        self.move_count = 0
-        
-                
-class Fire_3(Fire):
-    def __init__(self):
-        self.path = fire_PATH_2
-        self.path_index = 0
-        self.move_count = 0
-        global wave
-        if wave == 2:
-            self.stride = 10.0
-        else:
-            self.stride = 10.8
-        self.image = pygame.transform.scale(FIRE_IMAGE, (200, 200))
-        self.rect = self.image.get_rect()
-        self.rect.center = self.path[self.path_index]
-        self.path_index = 0
-        self.move_count = 0
 
 class FireGroup:
     def __init__(self):
@@ -125,15 +93,7 @@ class FireGroup:
         if self.is_empty():
             wave +=1
             for i in range(num):#迴圈
-                rand_num = randint(0,100)
-                class_enemy = rand_num % 3
-                if class_enemy == 0:
-                    self.__reserved_members.append(Fire_1())#append進去
-                elif class_enemy == 1:
-                    self.__reserved_members.append(Fire_2())#append進去
-                elif class_enemy == 2:
-                    self.__reserved_members.append(Fire_3())#append進去
-
+                self.__reserved_members.append(Fire_1())#append進去
             return True
             
 
