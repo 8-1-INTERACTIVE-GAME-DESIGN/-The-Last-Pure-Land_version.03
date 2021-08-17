@@ -2,10 +2,11 @@ import pygame
 import os
 from tower.towers import Tower, Vacancy
 from enemy.enemies import EnemyGroup
+from fire import FireGroup
 from menu.menus import UpgradeMenu, BuildMenu, MainMenu
-from game.user_request import RequestSubject, TowerFactory, TowerSeller, TowerDeveloper, EnemyGenerator, Muse, Music, Pause, A_O_E, Heal
+from game.user_request import RequestSubject, TowerFactory, TowerSeller, TowerDeveloper, EnemyGenerator, Muse, Music, Pause, A_O_E,Heal
 from settings import WIN_WIDTH, WIN_HEIGHT, BACKGROUND_IMAGE
-clock = pygame.time.Clock()  
+clock = pygame.time.Clock()
 
 class GameModel:
     def __init__(self):
