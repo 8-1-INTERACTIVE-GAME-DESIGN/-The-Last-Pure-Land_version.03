@@ -14,11 +14,7 @@ pygame.init()
 FIRE_IMAGE = pygame.image.load(os.path.join("images", "fire_ball.png"))
 class Fire:
     def __init__(self):
-        self.p = random.randint(0,1)
-        if self.p == 0:
-            self.path = fire_PATH_1
-        else:
-            self.path = fire_PATH_2
+        self.path = fire_PATH_2
         self.path_index = 0
         self.move_count = 0
         self.stride = 10.2
@@ -48,11 +44,7 @@ class Fire:
             self.rect.center = self.path[self.path_index]
 class Fire_1(Fire):
     def __init__(self):
-        self.p = random.randint(0,1)
-        if self.p == 0:
-            self.path = fire_PATH_1
-        else:
-            self.path = fire_PATH_2
+        self.path = fire_PATH_2
         global wave
         self.path_index = 0
         self.move_count = 0
@@ -60,7 +52,7 @@ class Fire_1(Fire):
             self.stride = 10.5
         else:
             self.stride = 10.2
-        self.image = pygame.transform.scale(FIRE_IMAGE, (140, 140))
+        self.image = pygame.transform.scale(FIRE_IMAGE, (200, 200))
         self.rect = self.image.get_rect()
         self.rect.center = self.path[self.path_index]
         self.path_index = 0
@@ -68,11 +60,7 @@ class Fire_1(Fire):
 
 class Fire_2(Fire):
     def __init__(self):
-        self.p = random.randint(0,1)
-        if self.p == 0:
-            self.path = fire_PATH_1
-        else:
-            self.path = fire_PATH_2
+        self.path = fire_PATH_2
         self.path_index = 0
         self.move_count = 0
         global wave
@@ -80,7 +68,7 @@ class Fire_2(Fire):
             self.stride = 10.2
         else:
             self.stride = 10.0
-        self.image = pygame.transform.scale(FIRE_IMAGE, (140, 140))
+        self.image = pygame.transform.scale(FIRE_IMAGE, (200, 200))
         self.rect = self.image.get_rect()
         self.rect.center = self.path[self.path_index]
         self.path_index = 0
@@ -89,11 +77,7 @@ class Fire_2(Fire):
                 
 class Fire_3(Fire):
     def __init__(self):
-        self.p = random.randint(0,1)
-        if self.p == 0:
-            self.path = fire_PATH_1
-        else:
-            self.path = fire_PATH_2
+        self.path = fire_PATH_2
         self.path_index = 0
         self.move_count = 0
         global wave
@@ -101,7 +85,7 @@ class Fire_3(Fire):
             self.stride = 10.0
         else:
             self.stride = 10.8
-        self.image = pygame.transform.scale(FIRE_IMAGE, (140, 140))
+        self.image = pygame.transform.scale(FIRE_IMAGE, (200, 200))
         self.rect = self.image.get_rect()
         self.rect.center = self.path[self.path_index]
         self.path_index = 0

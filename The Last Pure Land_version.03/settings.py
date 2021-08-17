@@ -36,7 +36,7 @@ heal_PATH_2 = [(200, 600), (200, 0)]
 heal_PATH_3 = [(600, 600), (600, 0)]
 # base
 BASE = pygame.Rect(0, 200, 70, 80)
-fire_frame_BASE = pygame.Rect(0, 580, 1024, 10)
+fire_frame_BASE = pygame.Rect(0, 400, 1024, 10)
 heal_frame_BASE = pygame.Rect(0, 0, 1024, 10)
 # image
 BACKGROUND_IMAGE = pygame.image.load(os.path.join("images", "Map.png"))

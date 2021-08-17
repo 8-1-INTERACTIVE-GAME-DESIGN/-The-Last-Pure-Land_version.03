@@ -155,7 +155,7 @@ class A_O_E:
     def update(self, user_request: str, model):
         if user_request == "aoe":
             if model.money >= 500:
-                model.fire_balls.add(3)
+                model.fire_balls.add(1)
                 model.fire_attack = 1
                 for en in model.enemies.get():
                     if en.health <= 3:
