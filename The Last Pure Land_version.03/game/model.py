@@ -14,6 +14,7 @@ class GameModel:
         self.bg_image = pygame.transform.scale(BACKGROUND_IMAGE, (WIN_WIDTH, WIN_HEIGHT))
         self.__towers = []
         self.__enemies = EnemyGroup()
+        self.__fire_balls = FireGroup()
         self.__menu = None
         self.__main_menu = MainMenu()
         self.__plots = [Vacancy(702, 483), Vacancy(555,412), Vacancy(663,290),Vacancy(816, 342),Vacancy(970, 328),Vacancy(839, 200),
@@ -22,6 +23,7 @@ class GameModel:
         self.count_down = 5
         self.count = 0
         self.attack = 0
+        self.fire_attack = 0
         # selected item
         self.selected_plot = None
         self.selected_tower = None
@@ -112,10 +114,20 @@ class GameModel:
             
     def enemies_advance(self):
         self.__enemies.advance(self)
+        
+    def fire_balls_advance(self):
+        self.__fire_balls.advance(self)
 
     def enemies_is_empty(self):
         return True if self.enemies.is_empty() else False
+    
+    def fire_balls_are_empty(self):
+        return True if self.fire_balls.is_empty() else False
 
+    @property
+    def fire_balls(self):
+        return self.__fire_balls
+    
     @property
     def enemies(self):
         return self.__enemies

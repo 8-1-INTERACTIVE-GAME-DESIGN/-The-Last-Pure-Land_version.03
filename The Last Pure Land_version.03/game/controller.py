@@ -18,7 +18,7 @@ class GameControl:
         self.model.call_menu()
         self.model.towers_attack()
         self.model.enemies_advance()
-
+        self.model.fire_balls_advance()
     def receive_user_input(self):
         """receive user input from the events"""
         # event initialization
@@ -70,6 +70,12 @@ class GameControl:
         
         if self.model.wave == 2 and self.model.enemies_is_empty():
             self.view.draw_win(self)
+             
+        if self.model.fire_attack == 1 and self.model.enemies_is_empty() == False:
+            self.view.draw_fire_balls(self.model.fire_balls)
+        elif self.model.fire_attack == 1 and self.model.enemies_is_empty(): 
+            self.model.fire_attack = 1
+            
 
 
     @property

@@ -5,7 +5,7 @@ import os
 import random
 from random import randint
 from random import uniform
-from settings import fire_PATH_1,fire_PATH_2, fira_frame_BASE
+from settings import fire_PATH_1,fire_PATH_2, fire_frame_BASE
 from color_settings import *
 global wave
 
@@ -21,7 +21,7 @@ class Fire:
             self.path = fire_PATH_2
         self.path_index = 0
         self.move_count = 0
-        self.stride = 1.2
+        self.stride = 10.2
         self.rect = self.image.get_rect()
         self.rect.center = self.path[self.path_index]
         self.path_index = 0
@@ -57,10 +57,10 @@ class Fire_1(Fire):
         self.path_index = 0
         self.move_count = 0
         if wave == 2:
-            self.stride = 1.5
+            self.stride = 10.5
         else:
-            self.stride = 1.2
-        self.image = pygame.transform.scale(FIRE_IMAGE, (40, 40))
+            self.stride = 10.2
+        self.image = pygame.transform.scale(FIRE_IMAGE, (140, 140))
         self.rect = self.image.get_rect()
         self.rect.center = self.path[self.path_index]
         self.path_index = 0
@@ -77,10 +77,10 @@ class Fire_2(Fire):
         self.move_count = 0
         global wave
         if wave == 2:
-            self.stride = 1.2
+            self.stride = 10.2
         else:
-            self.stride = 1.0
-        self.image = pygame.transform.scale(FIRE_IMAGE, (40, 40))
+            self.stride = 10.0
+        self.image = pygame.transform.scale(FIRE_IMAGE, (140, 140))
         self.rect = self.image.get_rect()
         self.rect.center = self.path[self.path_index]
         self.path_index = 0
@@ -98,10 +98,10 @@ class Fire_3(Fire):
         self.move_count = 0
         global wave
         if wave == 2:
-            self.stride = 1.0
+            self.stride = 10.0
         else:
-            self.stride = 0.8
-        self.image = pygame.transform.scale(FIRE_IMAGE, (40, 40))
+            self.stride = 10.8
+        self.image = pygame.transform.scale(FIRE_IMAGE, (140, 140))
         self.rect = self.image.get_rect()
         self.rect.center = self.path[self.path_index]
         self.path_index = 0
@@ -116,11 +116,11 @@ class FireGroup:
 
     def advance(self, model):
         self.campaign()
-        for en in self.__expedition:
-            en.move()
+        for fire in self.__expedition:
+            fire.move()
             # delete the object when it reach the base
-            if fira_frame_BASE.collidepoint(en.rect.centerx, en.rect.centery):
-                self.retreat(en)
+            if fire_frame_BASE.collidepoint(fire.rect.centerx, fire.rect.centery):
+                self.retreat(fire)
 #                 if model.hp <= 0:
 #                     model.game_over()
 

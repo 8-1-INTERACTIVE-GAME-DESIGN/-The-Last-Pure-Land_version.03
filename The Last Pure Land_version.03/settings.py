@@ -28,18 +28,23 @@ PATH2 = [(1002, 267), (969, 266), (934, 268), (908, 284), (899, 315), (898, 348)
          (242, 345), (217, 344), (194, 343), (171, 336), (151, 323), (139, 304), (125, 288), (107, 274), 
          (86, 261), (61, 258)]
 
-fire_PATH_1 = [(80, 0), (280, 1024)]
-fire_PATH_2 = [(280, 0), (680, 1024)]
+fire_PATH_1 = [(80, 0), (280, 600)]
+fire_PATH_2 = [(280, 0), (680, 600)]
 
-heal_PATH_1 = [(30, 1024), (30, 0)]
-heal_PATH_2 = [(200, 1024), (200, 0)]
-heal_PATH_3 = [(600, 1024), (600, 0)]
+heal_PATH_1 = [(30, 600), (30, 0)]
+heal_PATH_2 = [(200, 600), (200, 0)]
+heal_PATH_3 = [(600, 600), (600, 0)]
 # base
 BASE = pygame.Rect(0, 200, 70, 80)
-fira_frame_BASE = pygame.Rect(0, 599, 1024, 1)
-heal_frame_BASE = pygame.Rect(0, 0, 1024, 1)
+fire_frame_BASE = pygame.Rect(0, 580, 1024, 10)
+heal_frame_BASE = pygame.Rect(0, 0, 1024, 10)
 # image
 BACKGROUND_IMAGE = pygame.image.load(os.path.join("images", "Map.png"))
 HP_GRAY_IMAGE = pygame.transform.scale(pygame.image.load("images/hp_gray.png"), (40, 40))
 HP_IMAGE = pygame.transform.scale(pygame.image.load("images/hp.png"), (40, 40))
-
+#COIN_BLACK = pygame.transform.scale(pygame.image.load("images/dollar_0.png"), (40, 40))
+COIN = [pygame.transform.scale(pygame.image.load("images/dollar_1.png"), (40, 40)),
+        pygame.transform.scale(pygame.image.load("images/dollar_0.png"), (40, 40))]
+WAVE = pygame.transform.scale(pygame.image.load("images/battle.png"), (40, 40))
+PCR = [pygame.transform.scale(pygame.image.load("images/pcr.png"), (40, 40)),
+       pygame.transform.scale(pygame.image.load("images/pcr02.png"), (80, 80))]

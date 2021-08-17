@@ -1,6 +1,7 @@
 import pygame
 from tower.towers import Tower, Vacancy
 from settings import WIN_WIDTH, WIN_HEIGHT
+from game.view import GameView
 """This module is import in model.py"""
 
 """
@@ -150,10 +151,12 @@ class Pause:
 class A_O_E:
     def __init__(self, subject):
         subject.register(self)
-
+        self.view = GameView()
     def update(self, user_request: str, model):
         if user_request == "aoe":
             if model.money >= 500:
+                model.fire_balls.add(3)
+                model.fire_attack = 1
                 for en in model.enemies.get():
                     if en.health <= 3:
                         en.health = 0
