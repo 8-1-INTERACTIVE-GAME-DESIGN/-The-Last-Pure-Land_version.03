@@ -1,5 +1,5 @@
 import pygame
-from settings import WAVE,COIN, WIN_WIDTH, WIN_HEIGHT, HP_IMAGE, HP_GRAY_IMAGE, BACKGROUND_IMAGE
+from settings import WAVE,SPRAY,COIN, WIN_WIDTH, WIN_HEIGHT, HP_IMAGE, HP_GRAY_IMAGE, BACKGROUND_IMAGE
 from color_settings import *
 clock = pygame.time.Clock() 
 
@@ -9,6 +9,7 @@ class GameView:
         #self.font = pygame.font.SysFont("comicsans", 30)
         self.font = pygame.font.Font(pygame.font.match_font('arial'), 25)
         self.coin_count = 0
+        self.spray_count = 0
         
     def draw_bg(self):
         self.win.blit(BACKGROUND_IMAGE, (0, 0))
@@ -30,6 +31,9 @@ class GameView:
     def draw_towers(self, towers):
         # draw tower
         for tw in towers:
+            if tw :
+                self.win.blit(SPRAY[self.spray_count % 3], tw.rect)
+                self.spray_count += 1
             self.win.blit(tw.image, tw.rect)
 
     def draw_range(self, selected_tower):
@@ -133,7 +137,3 @@ class GameView:
                             win = False
                             break
                 pygame.display.update()
-
-
-
-
